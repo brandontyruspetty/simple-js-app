@@ -6,18 +6,18 @@ let pokemonList = [
 
 
 
-// create for loop for pokemon iteration
-for(let i = 0; i < pokemonList.length; i++) {
+// create for forEach loop for pokemon iteration
+pokemonList.forEach(function(pokemon) {
     //create name/height variable
-let pokemonNameHeight = pokemonList[i].name + ' (height: ' +  pokemonList[i].height  + ')';  
+let pokemonNameHeight = pokemon.name + ' (height: ' +  pokemon.height  + ')';  
 // print conditionals
-if(pokemonList[i].height > 1.5){
+if(pokemon.height > 1.5){
     document.write('<p>' + pokemonNameHeight  + ' -  WOW! That\'s big! </p>');
-} else if(pokemonList[i].height < .5){
+} else if(pokemon.height < .5){
     document.write('<p>' + pokemonNameHeight  + ' - He\'s so cute! <p>'); 
 }else{
     document.write('<p>' +  pokemonNameHeight + '</p>');
 }
-}
+})
 
 
