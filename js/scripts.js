@@ -18,7 +18,7 @@ if(pokemon.height > 1.5){
 }else{
     document.write('<p>' +  pokemonNameHeight + '</p>');
 }
-})();
+});
 
 
 
