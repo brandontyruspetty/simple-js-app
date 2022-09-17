@@ -23,7 +23,7 @@ console.log(pokemonRepository.getAll());
 
 
 //cannot figure out how to link to the IIFE above
-pokemonList.forEach(function(pokemon) {
+(pokemonRepository(getAll)).forEach(function(pokemon) {
     
 let pokemonNameHeight = pokemon.name + ' (height: ' +  pokemon.height  + ')';  
 if(pokemon.height > 1.5){
