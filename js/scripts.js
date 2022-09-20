@@ -1,10 +1,7 @@
 //create pokemonRepository variable
 let pokemonRepository = (function(){
-let pokemonList= [
-    {name: 'Dewgong', type: ['ice', 'water'], height: 1.7},
-    {name: 'Bastiodon', type: ['steel', 'rock'], height: 1.3},
-    {name: 'Woobat', type: ['psychic', 'flying'], height: .4},
-];
+let pokemonList= []
+
 //create a return for key-value pairs
 function add(pokemon) {
     pokemonList.push(pokemon);
@@ -14,16 +11,20 @@ function getAll() {
 }
 return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
 };
 })()
 
+// console.log(pokemonRepository)
+
+pokemonRepository.add({name: 'Dewgong', type: ['ice', 'water'], height: 1.7});
+pokemonRepository.add({name: 'Bastiodon', type: ['steel', 'rock'], height: 1.3});
+pokemonRepository.add({name: 'Woobat', type: ['psychic', 'flying'], height: .4});
 pokemonRepository.add({name: 'Pikachu'});
-console.log(pokemonRepository.getAll());
 
 
-//cannot figure out how to link to the IIFE above
-(pokemonRepository(getAll)).forEach(function(pokemon) {
+
+pokemonRepository.getAll().forEach(function(pokemon) {
     
 let pokemonNameHeight = pokemon.name + ' (height: ' +  pokemon.height  + ')';  
 if(pokemon.height > 1.5){
@@ -34,5 +35,3 @@ if(pokemon.height > 1.5){
     document.write('<p>' +  pokemonNameHeight + '</p>');
 }
 });
-
-
