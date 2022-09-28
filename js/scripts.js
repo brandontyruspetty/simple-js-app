@@ -11,9 +11,7 @@ function add(pokemon) {
 function getAll() {
     return pokemonList;
 }
-function showDetails(pokemon){
-    console.log(pokemon)
-};
+
 function addListItem(pokemon){
     let pokemonList = document.querySelector('.pokemon-list');
     let listItem = document.createElement('li');
