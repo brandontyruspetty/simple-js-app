@@ -69,6 +69,42 @@ function loadDetails(item) {
   document.querySelector('.pokebutton').addEventListener('click',() => {
     showModal();
   });
+  function showModal(pokemon) {
+    let modalContainer = document.querySelector('#pokemon-modal');
+    
+    //Clear all existing modal content
+    modalContainer.innerText = '';
+
+    //Add modal
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    //add the new modal content
+    let  closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'Close';
+
+    let titleElement = document.createElement('h1');
+    titleElement.innerText = pokemon.name;
+
+    let heightElement = document.createElement('p');
+    heightElement.innerText = 'Height: ' + pokemon.height;
+
+    let imageElement = document.createElement('img');
+    imageElement.src = pokemon.imageURL;
+
+    //appending the previous elements to modal container
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(heightElement);
+    modal.appendChild(imageElement);
+    modalContainer.appendChild(modal);
+    
+
+
+
+
+  }
 
 
 return {
