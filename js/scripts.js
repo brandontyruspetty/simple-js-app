@@ -61,6 +61,15 @@ function loadDetails(item) {
       console.log(pokemon);
     });
   }
+  //adding showModal function with event listener
+  function showModal(pokemon) {
+    let modalContainer = document.querySelector('#pokemon-modal');
+    modalContainer.classList.add('is-visible');
+  }
+  document.querySelector('.pokebutton').addEventListener('click',() => {
+    showModal();
+  });
+
 
 return {
     add: add,
