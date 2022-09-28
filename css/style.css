@@ -1,11 +1,45 @@
+#poke-container {
+  border: 2px solid black;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.pokemon-header {
+  background-color: #AAB7B8;
+  color: black;
+  font: 20px;
+  text-align: center;
+  padding: 8px;
+  width: 100%;
+  
+}
+.pokedex {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-list {
+  list-style-type: none;
+}
+
+
 .pokebutton {
-    background-color: #F1C40F;
-      border: none;
+    background-color: #34495E ;
+      border: 2px solid #D35400;
       color: white;
       padding: 16px 32px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
+      width: 100%;
       margin: 4px 2px;
+      cursor: pointer;
   }
+
+  
