@@ -17,6 +17,7 @@
 
 .pokemon-list {
   list-style-type: none;
+  padding: 0;
 }
 #pokemon-modal {
   display: none;
