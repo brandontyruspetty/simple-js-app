@@ -64,7 +64,6 @@ let pokemonRepository = (function () {
 
     //adding showModal function with event listener
     function showModal(pokemon) {
-        debugger
         let pokemonModal = document.querySelector('#pokemon-modal');
 
 
