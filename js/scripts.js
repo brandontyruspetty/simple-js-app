@@ -13,12 +13,16 @@ let pokemonRepository = (function () {
     }
 
     function addListItem(pokemon) {
-        let pokemonList = document.querySelector('.pokemon-list');
+        let pokemonList = document.querySelector('#list-group');
         let listItem = document.createElement('li');
+        //added Bootstrap list-group-item class
+        listItem.classList.add('list-group-item');
         //create button for individual pokemons
         let button = document.createElement('button');
         button.innerText = pokemon.name;
         button.classList.add('pokebutton');
+        //Added Bootstrap button utility
+        button.classList.add('btn');
         //attach button to listItem
         listItem.appendChild(button);
         pokemonList.appendChild(listItem);
