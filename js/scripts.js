@@ -21,6 +21,8 @@ let pokemonRepository = (function () {
         let button = document.createElement('button');
         button.innerText = pokemon.name;
         button.classList.add('pokebutton');
+        button.setAttribute('data-toggle', 'modal');
+        button.setAttribute('data-target', '#pokemon-modal')
         //Added Bootstrap button utility
         button.classList.add('btn');
         //attach button to listItem
@@ -53,9 +55,12 @@ let pokemonRepository = (function () {
             return response.json();
         }).then(function (details) {
             // Details added to item
-            item.imageUrl = details.sprites.front_default;
+            item.imageUrlFront = details.sprites.front_default;
+            item.imageUrlBack = details.sprites.back_default;
             item.height = details.height;
+            item.weight = details.weight;
             item.types = details.types;
+            item.abilities = details.abilities;
         }).catch(function (e) {
             console.error(e);
         });
@@ -86,7 +91,7 @@ let pokemonRepository = (function () {
     //Create element for weight in modal content
     let weightElement = $("<p>" + "weight : " + pokemon.weight + "<p>");
     //Create element for type in modal content
-    let typeElement = $("<p>" + "types : " + pokemon.types + "<p>");
+    let typesElement = $("<p>" + "types : " + pokemon.types + "<p>");
     //Create element for abilities in modal content
     let abilitiesElement = $("<p>" + "abilities : " + pokemon.abilities + "<p>");
     
@@ -95,7 +100,7 @@ let pokemonRepository = (function () {
     modalBody.append(imageElementBack);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
-    modalBody.append(typeElement);
+    modalBody.append(typesElement);
     modalBody.append(abilitiesElement);
     }
 
