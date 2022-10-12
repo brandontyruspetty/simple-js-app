@@ -79,6 +79,16 @@ let pokemonRepository = (function () {
     modalTitle.empty();
     modalBody.empty();
 
+    let types = []
+    pokemon.types.forEach(function(type) {
+        types.push(type.type.name)
+    })
+
+    let abilities = []
+    pokemon.abilities.forEach(function(ability) {
+        abilities.push(ability.ability.name)
+    })
+
     //Create element for name in modal content
     let nameElement = $("<h1>" + pokemon.name + "</h1>");
     //Create img in modal content
@@ -91,9 +101,9 @@ let pokemonRepository = (function () {
     //Create element for weight in modal content
     let weightElement = $("<p>" + "weight : " + pokemon.weight + "<p>");
     //Create element for type in modal content
-    let typesElement = $("<p>" + "types : " + pokemon.types + "<p>");
+    let typesElement = $("<p>" + "types : " + types.join(', ') + "<p>");
     //Create element for abilities in modal content
-    let abilitiesElement = $("<p>" + "abilities : " + pokemon.abilities + "<p>");
+    let abilitiesElement = $("<p>" + "abilities : " + abilities.join(', ') + "<p>");
     
     modalTitle.append(nameElement);
     modalBody.append(imageElementFront);
